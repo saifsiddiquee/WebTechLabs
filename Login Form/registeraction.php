@@ -1,15 +1,22 @@
 <?php
 
-	$user = $_POST['user'];
-	$pass = $_POST['pass'];
-	$repass = $_POST['repass'];
-	$email = $_POST['email'];
-	$fname = $_POST['fname'];
+	$user = validate($_POST['user']);
+	$pass = validate($_POST['pass']);
+	$repass = validate($_POST['repass']);
+	$email = validate($_POST['email']);
+	$fname = validate($_POST['fname']);
+
+	function validate($data){
+            $data = trim($data);
+            $data = stripcslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
 
 	$myArray = array('UserName' => $user, 'Password' => $pass, 'Repassword' => $repass, 'E-mail' => $email, 'FullName' => $fname);
 	//$data = implode('<br', $myArray);
 
-	echo  $myArray;
+	print_r($myArray);
 
 	// *********Testing*************
 	// echo $user."<br>";
@@ -17,6 +24,4 @@
 	// echo $repass."<br>";
 	// echo $email."<br>";
 	// echo $fname."<br>";
-
-
 ?>
