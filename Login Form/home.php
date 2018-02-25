@@ -14,8 +14,8 @@
 ?>
 	<form align="center">
 		<h1 align="center">HOME</h1>
-		<button type="button" value="Logout" style="float: right;"><a style="text-decoration: none" href="logoutaction.php">Logout</a></button><br>
-		<h3 align="center">Hello!, <?php echo $_SESSION['simple_login']; ?></h3><hr>
+		<button type="button" value="Logout" style="float: right;"><a style="text-decoration: none" href= "logoutaction.php">Logout</a></button><br>
+		<h3 align="center">Hello! <?php echo $_SESSION['simple_login']; ?></h3><hr>
 		<button><a style="text-decoration: none" href="userinfo.php">User Info</button>
 	    <button><a style="text-decoration: none" href="userlogininfo.php"> Users Login info</button>
 	</form>

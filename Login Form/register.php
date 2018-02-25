@@ -8,22 +8,30 @@
 		<legend>Registration Form</legend>
 		<table align="center">
 
-			<form action="registeraction.php" method="POST">
+			<form action= "registeraction.php" method="POST">
 				<tr>
-					<td>User Name</td><td> <input type="text" name="user"></td>
+					<td>User Name</td><td> <input type="text" name="username" required=""></td>
 				</tr>
+
 				<tr> 
-					<td>Password</td><td> <input type="password" name="pass"></td>
+					<td>Password</td><td> <input type="password" name="password" required=""></td>
 				</tr>
+
 				<tr>
 					<td>Re-type Password </td>
-					<td><input type="password" name="repass"></td>
+					<td><input type="password" name="confirmPass" required=""></td>
 				</tr>
+
 				<tr>
-					<td>Email</td><td> <input type="text" name="email"></td>
+					<td>Email</td><td> <input type="text" name="email" required=""></td>
 				</tr>
+
 				<tr>
-					<td>Full Name</td><td> <input type="text" name="fname"></td>
+					<td>Phone No.</td><td> <input type="text" name="phone" required=""></td>
+				</tr>
+				
+				<tr>
+					<td>Full Name</td><td> <input type="text" name="fullName" required=""></td>
 				</tr>
 				<td><button type="Submit" name="registration">Submit</button></td>
 				<td><button type="reset">Reset</button></td>

@@ -10,6 +10,11 @@
 	        <button type="button" value="Logout" style="float: right;"><a href="logoutaction.php">Logout</button>
 	        <button type="button" value="" style="float: right;"><a href="home.php">Home</a></button><br><br>
 		<form>
+			<?php
+				session_start();
+				if(empty($_SESSION["username"]))
+					header("location:index.php");
+			?>
 	    	<table border=".5px" align="center" style="width:80%">
 	    		<tr>
 	    			<th>SL.</th>
@@ -17,26 +22,13 @@
 	    			<th>Phone</th>
 	    			<th>Email</th>
 	    		</tr>
-	    		<tr>
-	    			<td>1</td>
-	    			<td>d</td>
-	    			<td></td>
-	    			<td></td>
-	    		</tr>
-	    		<tr>
-	    			<td>2</td>
-	    			<td></td>
-	    			<td></td>
-	    			<td></td>
-	    		</tr>
+	    		<tr align="center">
+	    			<td>1.</td>
+			  		<td><?php echo $_SESSION["fullName"] ?></td>
+				    <td><?php echo $_SESSION["phone"]?></td>
+				    <td><?php echo $_SESSION["email"]?></td>
+				</tr>
 	    	</table>
 		</form>
 </body>
 </html>
-
-<?php
-	session_start();
-    if(!isset($_SESSION['simple_login'])){
-        header("Location: index.php");
-        exit();
-?>
