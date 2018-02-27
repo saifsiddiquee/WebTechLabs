@@ -26,8 +26,8 @@
 	    		</tr>
 	    		<tr align="center">
 	    			<td>1</td>
-	    			<td><?php echo $_SESSION['simple_login'];?></td>
-	    			<td><?php echo $_SESSION['pass_login'];?></td>
+	    			<td><?php echo $_SESSION['username'];?></td>
+	    			<td><?php echo $_SESSION['password'];?></td>
 	    		</tr>
 	    		<tr align="center">
 	    			<td>2</td>

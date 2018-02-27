@@ -3,7 +3,7 @@
 	$pass = validate($_POST['password']);
 	$repass = validate($_POST['confirmPass']);
 	$email = validate($_POST['email']);
-	$phone = validate($_POST["phone"]);
+	$phone = $_POST["phone"];
 	$fname = validate($_POST['fullName']);
 
 	session_start();
@@ -70,14 +70,14 @@
 			}
 		}
 
-		// if (empty($phone)) 
-		// {
-		// 	echo $errorlist["phoneErr"];
-		// }
-		// else
-		// {
+		if (empty($phone)) 
+		{
+			echo $errorlist["phoneErr"];
+		}
+		else
+		{
 			//$phoneNum = $phone;
-			if(strlen($phone) == 11 || strlen($phone) == 12)
+			if(strlen($phone) == 11)
 			{
 				if(!preg_match("/^([0-9]{1,5})[-\. ]?([0-9]{6})$/", $phone))
 				{
@@ -89,7 +89,7 @@
 					$success++;
 				}
 			}
-			else if(strlen($phone)==14 || strlen($phone)==15)
+			else if(strlen($phone)==14 || strlen($phone)==13)
 			{
 				if(!preg_match("/^\+?88?([0-9]{1,5})[-\. ]?([0-9]{6})$/", $phone))
 				{
@@ -100,7 +100,7 @@
 					$_SESSION["phone"] = $phone;
 					$success++;
 				}
-			}
+		}
 			// else
 			// 	{
 			// 	    echo $errorlist["phoneErr"];
@@ -123,14 +123,18 @@
 			  	}
 			}
 
+			echo $success;
+
 			print_r($_SESSION);
 
 			if($success==6)
-			  {
+			{
 			  	header("location: index.php");
-			  }
+			  	echo "Registration Successful";
+			}
 			  else
 			  	$success=0;
+	}
 	
 
 	$myArray = array(array('userName' => $user, 'password' => $pass, 'rePassword' => $repass, 'E-mail' => $email, 'phone' => $phone, 'FullName' => $fname));
